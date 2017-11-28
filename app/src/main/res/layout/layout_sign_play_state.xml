@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@android:color/white"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_sign_status_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sing_player_status"
+        android:textSize="18sp"
+        android:paddingBottom="5dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/tv_select_id_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_identity"
+        android:paddingTop="5dp"/>
+
+    <ListView
+        android:id="@+id/lv_role_start"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:choiceMode="singleChoice"
+        android:divider="@null"/>
+
+    <TextView
+        android:id="@+id/tv_confirm_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ensure"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:background="@drawable/blue_fill_corner"
+        android:padding="10dp"/>
+</LinearLayout>

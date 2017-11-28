@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">狼人杀上帝工具</string>
+    <string name="select_player_num">选择总人数：</string>
+    <string name="reduce">减少</string>
+    <string name="add">增加</string>
+    <string name="_10">10</string>
+    <string name="select_role">选择角色：</string>
+    <string name="close_your_eyes">天黑请闭眼</string>
+    <string name="villager">村民</string>
+    <string name="werewolf">狼人</string>
+    <string name="cupid">丘比特</string>
+    <string name="sing_player_status">请标记%d号玩家状态</string>
+    <string name="is_alive">是否存活</string>
+    <string name="select_identity">选择身份</string>
+    <string name="start">月黑风高杀人夜</string>
+    <string name="sign_lover">标记为恋人</string>
+    <string name="die_for_love">恋人殉情</string>
+    <string name="message_clear_data">返回上一页面将清空所有当前数据，需重新设置玩家信息，确定返回？</string>
+    <string name="ensure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="select_die_type">请选择死亡类型！</string>
+    <string name="default_role">未设置身份</string>
+    <string name="role_not">玩家 %d 未设置身份</string>
+    <string name="role_ok">已确认角色</string>
+    <string name="wolf_do">狼人请行动</string>
+    <string name="wolf_detail">请选择你要杀的人</string>
+    <string name="yes">是的</string>
+    <string name="no">不不不</string>
+
+    <!--狼人页面-->
+    <string name="wolf_title">狼人请睁眼</string>
+    <string name="wolf_describe">狼人请杀人</string>
+    <string name="wolf_kill_title">你们决定刺杀 %d 号玩家？</string>
+
+    <!--女巫页面-->
+    <string name="witch_title">女巫请睁眼</string>
+    <string name="witch_describe">女巫开始行动</string>
+    <string name="witch_save_title">%d 号玩家死亡你是否要救？</string>
+    <string name="witch_kill_title">是否使用毒药？</string>
+    <string name="witch_kill_person">使用毒药杀死 %d 号玩家？</string>
+
+    <!--预言家页面-->
+    <string name="seer_title">预言家请睁眼</string>
+    <string name="seer_describe">预言家请验人</string>
+    <string name="seer_see_title">你决定验证 %d 号玩家身份？</string>
+</resources>
