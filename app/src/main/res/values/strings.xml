@@ -7,7 +7,11 @@
     <string name="select_role">选择角色：</string>
     <string name="close_your_eyes">天黑请闭眼</string>
     <string name="villager">村民</string>
+    <!--狼人角色-->
     <string name="werewolf">狼人</string>
+    <string name="devil">恶魔</string>
+    <string name="white_wolf">白狼王</string>
+    <string name="beautiful_wolf">狼美人</string>
     <string name="cupid">丘比特</string>
     <string name="sing_player_status">请标记%d号玩家状态</string>
     <string name="is_alive">是否存活</string>
@@ -43,4 +47,6 @@
     <string name="seer_title">预言家请睁眼</string>
     <string name="seer_describe">预言家请验人</string>
     <string name="seer_see_title">你决定验证 %d 号玩家身份？</string>
+    <string name="seer_good">%d 号玩家是 好人</string>
+    <string name="seer_bad">%d 号玩家是 狼人</string>
 </resources>

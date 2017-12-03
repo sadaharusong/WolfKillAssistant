@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.github.sadaharusong.wolfkillassistant.R;
+import com.github.sadaharusong.wolfkillassistant.fragment.FragmentJumpManager;
 import com.github.sadaharusong.wolfkillassistant.fragment.WolfFragment;
 
 
@@ -26,5 +27,7 @@ public class GameActivity extends AppCompatActivity {
         WolfFragment fragment = new WolfFragment();
         fragmentTransaction.add(R.id.game_activity, fragment);
         fragmentTransaction.commit();
+
+        FragmentJumpManager.getInstance().init(fragmentManager);
     }
 }

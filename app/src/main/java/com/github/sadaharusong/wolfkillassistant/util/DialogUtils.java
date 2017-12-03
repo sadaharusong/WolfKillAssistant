@@ -30,4 +30,15 @@ public class DialogUtils {
         // 显示
         normalDialog.show();
     }
+
+    public static void showSingleDialog(Context context, String message){
+        final AlertDialog.Builder singleDialog = new AlertDialog.Builder(context);
+        singleDialog.setMessage(message);
+        singleDialog.setPositiveButton(R.string.ensure, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+    }
 }

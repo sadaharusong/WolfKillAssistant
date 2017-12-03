@@ -65,6 +65,7 @@ public abstract class BaseFragment extends Fragment{
     }
 
     public abstract String setTitle();
+    public abstract int setFragmentFlag();
     public abstract String setDescribe();
     public abstract int setTime();
     public abstract OnItemClickListener setOnItemClickListener();
@@ -83,6 +84,7 @@ public abstract class BaseFragment extends Fragment{
                     }else{
                         // TODO: 2017/10/29 0029 跳入下一个状态，用一个GameManager来做管理
                         //txtView.setVisibility(View.GONE);
+                        FragmentJumpManager.getInstance().jumpToNextFragment(setFragmentFlag());
                     }
             }
 
