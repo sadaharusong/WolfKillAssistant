@@ -52,7 +52,6 @@ public abstract class BaseFragment extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this,view);
         GameAdapter gameAdapter = new GameAdapter(getActivity(),mPlayMap);
-        mTitle = view.findViewById(R.id.action_title);
         mTitle.setText(setTitle());
         mDescribe.setText(setDescribe());
         Message message = handler.obtainMessage(1);     // Message
@@ -92,5 +91,9 @@ public abstract class BaseFragment extends Fragment{
         }
     };
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        handler.removeCallbacksAndMessages(null);
+    }
 }

@@ -40,6 +40,7 @@
     <string name="witch_title">女巫请睁眼</string>
     <string name="witch_describe">女巫开始行动</string>
     <string name="witch_save_title">%d 号玩家死亡你是否要救？</string>
+    <string name="witch_not_kill_title">已使用解药无法使用毒药</string>
     <string name="witch_kill_title">是否使用毒药？</string>
     <string name="witch_kill_person">使用毒药杀死 %d 号玩家？</string>
 
@@ -49,4 +50,11 @@
     <string name="seer_see_title">你决定验证 %d 号玩家身份？</string>
     <string name="seer_good">%d 号玩家是 好人</string>
     <string name="seer_bad">%d 号玩家是 狼人</string>
+
+    <!--最终页面-->
+    <string name="final_tile">天亮啦！！~！！</string>
+    <string name="final_result_title">昨天晚上的结果：</string>
+    <string name="final_result_safe">平安夜</string>
+    <string name="final_result_dead">%s 号玩家死亡</string>
+    <string name="final_result_button">点击查看昨晚结果</string>
 </resources>

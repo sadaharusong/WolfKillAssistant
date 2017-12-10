@@ -31,14 +31,10 @@ public class DialogUtils {
         normalDialog.show();
     }
 
-    public static void showSingleDialog(Context context, String message){
+    public static void showSingleDialog(Context context, String message, DialogInterface.OnClickListener onClickListener){
         final AlertDialog.Builder singleDialog = new AlertDialog.Builder(context);
         singleDialog.setMessage(message);
-        singleDialog.setPositiveButton(R.string.ensure, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
+        singleDialog.setPositiveButton(R.string.ensure, onClickListener);
+        singleDialog.show();
     }
 }

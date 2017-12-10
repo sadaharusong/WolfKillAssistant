@@ -8,6 +8,8 @@ import com.github.sadaharusong.wolfkillassistant.R;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
 import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,6 +21,7 @@ import java.util.Map;
 public class FragmentJumpManager {
     private static FragmentJumpManager mManager;
     private static Map<Integer,Role> mPlayMap = RoleMap.getInstance().getRoleMap();
+    public static List<Integer> thisRoundPosition = new ArrayList<>();
 
     FragmentManager mFragmentManager;
 
@@ -47,10 +50,14 @@ public class FragmentJumpManager {
                 break;
             case WITCH_FRAGMENT:
                 jump(new SeerFragment());
+                break;
+            case SEER_FRAGMENT:
+                jump(new FinalResultFragment());
+                break;
         }
     }
 
-    private void jump(Fragment fragment ){
+    private void jump(Fragment fragment){
         FragmentTransaction ft = mFragmentManager.beginTransaction();
         ft.replace( R.id.game_activity, fragment);
         ft.addToBackStack(null);

@@ -50,7 +50,7 @@ public class SeerFragment extends BaseFragment {
                 });
             }
         };
-        return null;
+        return listener;
     }
 
     private void showRoleDialog(int position){
@@ -62,6 +62,11 @@ public class SeerFragment extends BaseFragment {
         }else {
             result = getString(R.string.seer_good, position + 1);
         }
-        DialogUtils.showSingleDialog(getActivity(),result);
+        DialogUtils.showSingleDialog(getActivity(), result, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                FragmentJumpManager.getInstance().jumpToNextFragment(FragmentJumpManager.SEER_FRAGMENT);
+            }
+        });
     }
 }

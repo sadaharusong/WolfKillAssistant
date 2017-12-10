@@ -2,6 +2,9 @@ package com.github.sadaharusong.wolfkillassistant.fragment;
 
 
 import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.View;
 
 import com.github.sadaharusong.wolfkillassistant.R;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
@@ -16,6 +19,12 @@ import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
  */
 
 public class WolfFragment extends BaseFragment {
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        FragmentJumpManager.thisRoundPosition.clear();
+    }
+
     @Override
     public String setTitle() {
         return getString(R.string.wolf_title);
@@ -45,6 +54,7 @@ public class WolfFragment extends BaseFragment {
                 DialogUtils.showNormalDialog(getActivity(), kill, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        FragmentJumpManager.thisRoundPosition.add(position);
                         Role role = mPlayMap.get(position);
                         role.setisDead(true);
                         RoleMap.getInstance().addRole(position,role);
