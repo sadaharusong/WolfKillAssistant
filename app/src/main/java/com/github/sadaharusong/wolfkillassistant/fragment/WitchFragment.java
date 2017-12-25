@@ -10,6 +10,8 @@ import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
 import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
+import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
+import com.github.sadaharusong.wolfkillassistant.util.SoundConstant;
 
 /**
  * Created by sadaharusong on 2017/12/3 0003.
@@ -21,23 +23,33 @@ public class WitchFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final int deadPosition = FragmentJumpManager.thisRoundPosition.get(0);
-        DialogUtils.showNormalDialog(getActivity(), getString(R.string.witch_save_title, deadPosition + 1), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                FragmentJumpManager.thisRoundPosition.clear();
-                Role role = mPlayMap.get(deadPosition);
-                role.setisDead(false);
-                RoleMap.getInstance().addRole(deadPosition,role);
-                dialogInterface.dismiss();
-                showNotKill();
-            }
-        }, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                showIsKill();
-            }
-        });
+        if (FragmentJumpManager.thisRoundPosition == null || FragmentJumpManager.thisRoundPosition.size() <= 0) {
+            DialogUtils.showSingleDialog(getActivity(), getString(R.string.witch_save_nobody_title), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    showIsKill();
+                }
+            });
+        } else {
+            final int deadPosition = FragmentJumpManager.thisRoundPosition.get(0);
+            DialogUtils.showNormalDialog(getActivity(), getString(R.string.witch_save_title, deadPosition + 1), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    FragmentJumpManager.thisRoundPosition.clear();
+                    Role role = mPlayMap.get(deadPosition);
+                    role.setisDead(false);
+                    RoleMap.getInstance().addRole(deadPosition,role);
+                    dialogInterface.dismiss();
+                    showNotKill();
+                }
+            }, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    showIsKill();
+                }
+            });
+        }
+
     }
 
     @Override
@@ -106,5 +118,11 @@ public class WitchFragment extends BaseFragment {
                 FragmentJumpManager.getInstance().jumpToNextFragment(FragmentJumpManager.WITCH_FRAGMENT);
             }
         });
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        MediaPlayUtils.getInstance().play(SoundConstant.WITCH_CLOSE);
     }
 }

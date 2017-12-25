@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by victor on 2017/1/24.
+ * Created by sadaharusong on 2017/9/17 0017.
  */
 
 public class SetRoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

@@ -11,6 +11,8 @@ import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
 import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
+import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
+import com.github.sadaharusong.wolfkillassistant.util.SoundConstant;
 
 /**
  * Created by sadaharusong on 2017/11/11 0011.
@@ -23,6 +25,7 @@ public class WolfFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentJumpManager.thisRoundPosition.clear();
+        MediaPlayUtils.getInstance().play(SoundConstant.WOLF_OPEN);
     }
 
     @Override
@@ -69,4 +72,9 @@ public class WolfFragment extends BaseFragment {
         return listener;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        MediaPlayUtils.getInstance().play(SoundConstant.WOLF_CLOSE_EYES);
+    }
 }

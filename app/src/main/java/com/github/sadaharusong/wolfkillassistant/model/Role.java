@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by victor on 2017/1/24.
+ * Created by sadaharusong on 2017/9/17 0017.
  * 角色model
  */
 

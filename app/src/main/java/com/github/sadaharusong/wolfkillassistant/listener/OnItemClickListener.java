@@ -1,7 +1,7 @@
 package com.github.sadaharusong.wolfkillassistant.listener;
 
 /**
- * Created by victor on 2017/1/24.
+ * Created by sadaharusong on 2017/9/17 0017.
  * recyclerView回调接口
  */
 

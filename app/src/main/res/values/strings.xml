@@ -39,6 +39,7 @@
     <!--女巫页面-->
     <string name="witch_title">女巫请睁眼</string>
     <string name="witch_describe">女巫开始行动</string>
+    <string name="witch_save_nobody_title">本回合没有玩家被刺杀</string>
     <string name="witch_save_title">%d 号玩家死亡你是否要救？</string>
     <string name="witch_not_kill_title">已使用解药无法使用毒药</string>
     <string name="witch_kill_title">是否使用毒药？</string>

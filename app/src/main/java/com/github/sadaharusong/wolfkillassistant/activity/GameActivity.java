@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.github.sadaharusong.wolfkillassistant.R;
 import com.github.sadaharusong.wolfkillassistant.fragment.FragmentJumpManager;
 import com.github.sadaharusong.wolfkillassistant.fragment.WolfFragment;
+import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
 
 
 /**
@@ -29,5 +30,11 @@ public class GameActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
         FragmentJumpManager.getInstance().init(fragmentManager);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MediaPlayUtils.getInstance().releasePlayer();
     }
 }
