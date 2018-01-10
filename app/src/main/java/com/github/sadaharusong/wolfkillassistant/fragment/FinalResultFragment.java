@@ -15,10 +15,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by sadaharusong on 2017/12/10 0010.
+ * @author sadaharusong
+ * @date 2017/12/10 0010.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */
+
 
 public class FinalResultFragment extends Fragment{
     @BindView(R.id.result_button)
@@ -41,9 +43,9 @@ public class FinalResultFragment extends Fragment{
             public void onClick(View view) {
                 String result;
                 if (FragmentJumpManager.thisRoundPosition.size() > 0){
-                    String resultNum = "";
+                    StringBuilder resultNum = new StringBuilder();
                     for (int a : FragmentJumpManager.thisRoundPosition){
-                        resultNum = resultNum +"[ " +(a + 1) + "] ";
+                        resultNum = resultNum.append("[ " +(a + 1) + "] ");
                     }
                     result = getString(R.string.final_result_dead, resultNum);
                 }else {

@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by sadaharusong on 2017/12/3 0003.
+ * @author sadaharusong
+ * @date 2017/12/3 0003.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */
-
 public class FragmentJumpManager {
     private static FragmentJumpManager mManager;
     private static Map<Integer,Role> mPlayMap = RoleMap.getInstance().getRoleMap();
@@ -54,6 +54,7 @@ public class FragmentJumpManager {
             case SEER_FRAGMENT:
                 jump(new FinalResultFragment());
                 break;
+            default:
         }
     }
 

@@ -3,11 +3,11 @@ package com.github.sadaharusong.wolfkillassistant.util;
 import com.github.sadaharusong.wolfkillassistant.R;
 
 /**
- * Created by sadaharusong on 2017/12/24 0024.
+ * @author sadaharusong
+ * @date 2017/12/24 0024.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */
-
 public class SoundConstant {
     public static final int WOLF_OPEN = 1;
     public static final int WOLF_KILL = 2;

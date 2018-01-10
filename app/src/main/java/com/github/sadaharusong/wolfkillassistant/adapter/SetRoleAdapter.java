@@ -18,7 +18,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by sadaharusong on 2017/9/17 0017.
+ * @author sadaharusong
+ * @date 2017/9/17 0017
+ * Github : https://github.com/sadaharusong
+ * Email : jacksomangel@163.com
  */
 
 public class SetRoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -89,7 +92,9 @@ public class SetRoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public void setData(List<Role> list) {
-        if (null == list || list.isEmpty()) return;
+        if (null == list || list.isEmpty()) {
+            return;
+        }
         if (null != mList) {
             mList.clear();
         }
@@ -104,7 +109,7 @@ public class SetRoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         @BindView(R.id.tv_role_name)
         TextView mTvRoleName;
 
-        public ItemLeftViewHolder(View itemView) {
+        ItemLeftViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
@@ -117,7 +122,7 @@ public class SetRoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         @BindView(R.id.tv_role_name)
         TextView mTvRoleName;
 
-        public ItemRightViewHolder(View itemView) {
+        ItemRightViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

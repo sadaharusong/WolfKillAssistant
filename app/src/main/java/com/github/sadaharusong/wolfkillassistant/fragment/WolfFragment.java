@@ -15,7 +15,8 @@ import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
 import com.github.sadaharusong.wolfkillassistant.util.SoundConstant;
 
 /**
- * Created by sadaharusong on 2017/11/11 0011.
+ * @author sadaharusong
+ * @date 2017/11/11 0011.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */

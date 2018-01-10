@@ -11,9 +11,9 @@ import com.github.sadaharusong.wolfkillassistant.fragment.FragmentJumpManager;
 import com.github.sadaharusong.wolfkillassistant.fragment.WolfFragment;
 import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
 
-
 /**
- * Created by sadaharusong on 2017/9/24 0024.
+ * @author sadaharusong
+ * @date 2017/9/24 0024.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */

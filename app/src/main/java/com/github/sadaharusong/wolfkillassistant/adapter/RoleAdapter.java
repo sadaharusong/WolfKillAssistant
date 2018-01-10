@@ -18,7 +18,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by sadaharusong on 2017/9/17 0017.
+ * @author sadaharusong
+ * @date 2017/9/17 0017
+ * Github : https://github.com/sadaharusong
+ * Email : jacksomangel@163.com
  */
 
 public class RoleAdapter extends RecyclerView.Adapter<RoleAdapter.ViewHolder> {
@@ -62,7 +65,9 @@ public class RoleAdapter extends RecyclerView.Adapter<RoleAdapter.ViewHolder> {
     }
 
     public void setData(List<Role> list) {
-        if (null == list) return;
+        if (null == list) {
+            return;
+        }
         this.mList = list;
         notifyDataSetChanged();
     }

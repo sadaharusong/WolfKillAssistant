@@ -4,8 +4,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by sadaharusong on 2017/9/17 0017.
  * 角色model
+ * @author sadaharusong
+ * @date 2017/9/17 0017.
+ * Github : https://github.com/sadaharusong
+ * Email : jacksomangel@163.com
  */
 
 public class Role implements Parcelable {
@@ -84,4 +87,23 @@ public class Role implements Parcelable {
             return new Role[size];
         }
     };
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+        if (obj instanceof Role){
+            if (obj != null && this != null){
+                if (((Role) obj).name != null && this.name !=null) {
+                    ((Role) obj).name.equals(this.name);
+                    result = true;
+                }
+            }
+        }
+        return result;
+    }
 }

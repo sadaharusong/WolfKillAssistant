@@ -8,11 +8,11 @@ import android.util.Log;
 import java.io.IOException;
 
 /**
- * Created by sadaharusong on 2017/12/24 0024.
+ * @author sadaharusong
+ * @date 2017/12/24 0024.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */
-
 public class MediaPlayUtils {
     private static MediaPlayUtils mInstance;
     private MediaPlayer mMediaPlayer;

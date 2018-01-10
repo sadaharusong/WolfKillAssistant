@@ -5,11 +5,11 @@ import android.util.ArrayMap;
 import java.util.Map;
 
 /**
- * Created by sadaharusong on 2017/11/12 0012.
+ * @author sadaharusong
+ * @date 2017/11/12 0012.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */
-
 public class RoleMap{
     private static RoleMap mRoleMap = null;
     private Map<Integer,Role> mMap = new ArrayMap<>();

@@ -7,7 +7,8 @@ import android.content.DialogInterface;
 import com.github.sadaharusong.wolfkillassistant.R;
 
 /**
- * Created by sadaharusong on 2017/11/19 0019.
+ * @author sadaharusong
+ * @date 2017/11/19 0019.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */

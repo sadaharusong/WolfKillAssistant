@@ -24,7 +24,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by sadaharusong on 2017/9/24 0024.
+ * @author sadaharusong
+ * @date 2017/9/24 0024.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */
@@ -54,7 +55,7 @@ public abstract class BaseFragment extends Fragment{
         GameAdapter gameAdapter = new GameAdapter(getActivity(),mPlayMap);
         mTitle.setText(setTitle());
         mDescribe.setText(setDescribe());
-        Message message = handler.obtainMessage(1);     // Message
+        Message message = handler.obtainMessage(1);
         handler.sendMessageDelayed(message, 1000);
 
         mNumberView.setLayoutManager(new GridLayoutManager(getActivity(),3));
@@ -63,28 +64,51 @@ public abstract class BaseFragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
     }
 
+
+    /**
+     * 设置页面的标题
+     * @return 标题
+     */
     public abstract String setTitle();
+    /**
+     * 标记页面的属性
+     * @return 页面属性
+     */
     public abstract int setFragmentFlag();
+    /**
+     * 设置页面的描述
+     * @return 描述
+     */
     public abstract String setDescribe();
+    /**
+     * 设置页面的规定时间，达到时间就会跳入下一个页面
+     * @return 时间
+     */
     public abstract int setTime();
+
+    /**
+     * 页面recycleView的Item监听
+     * @return 监听
+     */
     public abstract OnItemClickListener setOnItemClickListener();
 
     final Handler handler = new Handler(){
 
-        public void handleMessage(Message msg){         // handle message
+        @Override
+        public void handleMessage(Message msg){
             switch (msg.what) {
                 case 1:
                     mTime--;
-                    mTimeView.setText("" + mTime);
+                    mTimeView.setText(mTime + "");
 
                     if(mTime > 0){
                         Message message = handler.obtainMessage(1);
-                        handler.sendMessageDelayed(message, 1000);      // send message
+                        handler.sendMessageDelayed(message, 1000);
                     }else{
-                        // TODO: 2017/10/29 0029 跳入下一个状态，用一个GameManager来做管理
-                        //txtView.setVisibility(View.GONE);
                         FragmentJumpManager.getInstance().jumpToNextFragment(setFragmentFlag());
                     }
+                    break;
+                default:
             }
 
             super.handleMessage(msg);

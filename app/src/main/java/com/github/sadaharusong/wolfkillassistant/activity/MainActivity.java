@@ -28,6 +28,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ *
+ * @author sadaharusong
+ * @date 2017/9/17 0017
+ * Github : https://github.com/sadaharusong
+ * Email : jacksomangel@163.com
+ */
+
 public class MainActivity extends AppCompatActivity implements OnItemClickListener {
 
     @BindView(R.id.iv_reduce)

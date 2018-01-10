@@ -15,7 +15,10 @@ import java.util.List;
 
 
 /**
- * Created by sadaharusong on 2017/9/17 0017.
+ * @author sadaharusong
+ * @date 2017/9/17 0017
+ * Github : https://github.com/sadaharusong
+ * Email : jacksomangel@163.com
  */
 
 public class RolAdapter extends BaseAdapter {
@@ -54,8 +57,8 @@ public class RolAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             convertView = mLayoutInflater.inflate(R.layout.item_lv_role, parent, false);
             convertView.setTag(viewHolder);
-            viewHolder.mTvRoleName = (TextView) convertView.findViewById(R.id.tv_role_name);
-            viewHolder.mCb = (RadioButton) convertView.findViewById(R.id.cb_role);
+            viewHolder.mTvRoleName = convertView.findViewById(R.id.tv_role_name);
+            viewHolder.mCb = convertView.findViewById(R.id.cb_role);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
         }

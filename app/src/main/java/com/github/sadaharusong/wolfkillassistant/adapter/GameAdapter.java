@@ -17,11 +17,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by sadaharusong on 2017/9/24 0024.
+ *
+ * @author sadaharusong
+ * @date 2017/9/24 0024.
  * Github : https://github.com/sadaharusong
  * Email : jacksomangel@163.com
  */
-
 public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameItemHolder>{
     private Context mContext;
     private OnItemClickListener mListener;
@@ -62,7 +63,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameItemHolder
         @BindView(R.id.player_number)
         TextView mPlayerNumber;
 
-        public GameItemHolder(View itemView) {
+        GameItemHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

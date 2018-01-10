@@ -35,6 +35,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+
+/**
+ *
+ * @author sadaharusong
+ * @date 2017/9/17 0017
+ * Github : https://github.com/sadaharusong
+ * Email : jacksomangel@163.com
+ */
 public class SetRoleActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
     private static final String ROLE_LIST = "role_list";
@@ -117,8 +125,9 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
 
                 mCurrentPos = position;
                 mGameRole = mList.get(mCurrentPos);
-                if ((mList.size() % 2 == 0 && position < mList.size() / 2) ||
-                        (mList.size() % 2 != 0 && position < mList.size() / 2 + 1)) {
+                boolean leftSide = (mList.size() % 2 == 0 && position < mList.size() / 2);
+                boolean rightSide = (mList.size() % 2 != 0 && position < mList.size() / 2 + 1);
+                if ( leftSide || rightSide) {
                     if (mDl.isDrawerOpen(Gravity.RIGHT)) {
                         mDl.closeDrawer(Gravity.RIGHT);
                     } else {
@@ -208,14 +217,14 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
     void onBtnClick(View v) {
         switch (v.getId()) {
             case R.id.tv_confirm_start:
-                confirmSetRole(LEFT_DRAWER);
+                confirmSetRole();
                 if (mDl.isDrawerOpen(Gravity.LEFT)) {
                     mDl.closeDrawer(Gravity.LEFT);
                 }
                 break;
 
             case R.id.tv_confirm_end:
-                confirmSetRole(RIGHT_DRAWER);
+                confirmSetRole();
                 if (mDl.isDrawerOpen(Gravity.RIGHT)) {
                     mDl.closeDrawer(Gravity.RIGHT);
                 }
@@ -228,13 +237,11 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
                     Toast.makeText(SetRoleActivity.this, "角色还没输入完毕，不可开始！", Toast.LENGTH_SHORT).show();
                 }
                 break;
+            default:
         }
     }
 
-    private void confirmSetRole(int position) {
-        // TODO: 2017/9/6 保存(position + 1) 号玩家对应的状态
-        //mRoleMap.put(mCurrentPos + 1, mGameRole);
-
+    private void confirmSetRole() {
         if (mGameRole.getName().equals(getString(R.string.default_role))){
             Toast.makeText(SetRoleActivity.this, getString(R.string.role_not , mCurrentPos + 1), Toast.LENGTH_SHORT).show();
         }else {
