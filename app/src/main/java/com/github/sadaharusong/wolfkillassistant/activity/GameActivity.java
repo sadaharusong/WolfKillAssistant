@@ -37,4 +37,8 @@ public class GameActivity extends AppCompatActivity {
         super.onDestroy();
         MediaPlayUtils.getInstance().releasePlayer();
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }
