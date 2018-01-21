@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.sadaharusong.wolfkillassistant.R;
+import com.github.sadaharusong.wolfkillassistant.activity.SetRoleActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,9 +23,12 @@ import butterknife.ButterKnife;
  */
 
 
-public class FinalResultFragment extends Fragment{
+public class FinalResultFragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.result_button)
     Button mResultButton;
+
+    @BindView(R.id.replay_button)
+    Button mReplayButton;
 
     @BindView(R.id.result_text)
     TextView mResultTextView;
@@ -38,23 +42,39 @@ public class FinalResultFragment extends Fragment{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this,view);
-        mResultButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String result;
-                if (FragmentJumpManager.thisRoundPosition.size() > 0){
-                    StringBuilder resultNum = new StringBuilder();
-                    for (int a : FragmentJumpManager.thisRoundPosition){
-                        resultNum = resultNum.append("[ " +(a + 1) + "] ");
-                    }
-                    result = getString(R.string.final_result_dead, resultNum);
-                }else {
-                    result = getString(R.string.final_result_safe);
-                }
-                mResultTextView.setVisibility(View.VISIBLE);
-                mResultTextView.setText(result);
-            }
-        });
+        mResultButton.setOnClickListener(this);
+        mReplayButton.setOnClickListener(this);
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.result_button:
+                resultDo();
+                break;
+            case R.id.replay_button:
+                replayDo();
+            default:
+        }
+    }
+
+    private void resultDo(){
+        String result;
+        if (FragmentJumpManager.thisRoundPosition.size() > 0){
+            StringBuilder resultNum = new StringBuilder();
+            for (int a : FragmentJumpManager.thisRoundPosition){
+                resultNum = resultNum.append("[ " +(a + 1) + "] ");
+            }
+            result = getString(R.string.final_result_dead, resultNum);
+        }else {
+            result = getString(R.string.final_result_safe);
+        }
+        mResultTextView.setVisibility(View.VISIBLE);
+        mResultTextView.setText(result);
+    }
+
+    private void replayDo(){
+        SetRoleActivity.enter(getActivity());
     }
 }

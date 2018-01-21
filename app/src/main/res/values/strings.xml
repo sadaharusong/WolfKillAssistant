@@ -58,4 +58,5 @@
     <string name="final_result_safe">平安夜</string>
     <string name="final_result_dead">%s 号玩家死亡</string>
     <string name="final_result_button">点击查看昨晚结果</string>
+    <string name="final_replay_button">再搞一把</string>
 </resources>

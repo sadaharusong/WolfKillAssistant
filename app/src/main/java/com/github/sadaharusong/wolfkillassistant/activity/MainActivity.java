@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.github.sadaharusong.wolfkillassistant.R;
 import com.github.sadaharusong.wolfkillassistant.adapter.RoleAdapter;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
+import com.github.sadaharusong.wolfkillassistant.model.GameInfo;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
 import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
 import com.github.sadaharusong.wolfkillassistant.util.TextUtils;
@@ -124,7 +125,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                 break;
 
             case R.id.tv_close_eye:
-                if (mRoleSet.isEmpty()) return;
+                if (mRoleSet.isEmpty()) {
+                    return;
+                }
                 ArrayList<Role> list = new ArrayList<>(mRoleSet);
                 for (Role role : list) {
                     if (role.getName().equals(getString(R.string.cupid))) {
@@ -139,9 +142,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                 Role werewolf = new Role();
                 werewolf.setName(getString(R.string.werewolf));
                 list.add(1, werewolf);
-                SetRoleActivity.enter(this, list, currentCount, isNeedSignLover);
+                setGameInfo(list, currentCount, isNeedSignLover);
+                SetRoleActivity.enter(this);
                 isNeedSignLover = false;
                 break;
+            default:
         }
     }
 
@@ -161,5 +166,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                 }
             }
         }
+    }
+
+    private void setGameInfo(List<Role> roleList, int currentCount, boolean isNeedSignLover){
+        GameInfo.getInstance().setRoleList(roleList);
+        GameInfo.getInstance().setPlayerCount(currentCount);
+        GameInfo.getInstance().setNeedLover(isNeedSignLover);
     }
 }

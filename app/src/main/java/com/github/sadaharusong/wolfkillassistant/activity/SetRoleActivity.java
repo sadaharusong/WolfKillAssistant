@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import com.github.sadaharusong.wolfkillassistant.R;
 import com.github.sadaharusong.wolfkillassistant.adapter.RolAdapter;
 import com.github.sadaharusong.wolfkillassistant.adapter.SetRoleAdapter;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
+import com.github.sadaharusong.wolfkillassistant.model.GameInfo;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
 import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 
@@ -253,11 +255,11 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
 
     }
 
-    public static void enter(Context context, ArrayList<Role> list, int count, boolean isNeedSignLover) {
+    public static void enter(Context context) {
         Intent intent = new Intent(context, SetRoleActivity.class);
-        intent.putParcelableArrayListExtra(ROLE_LIST, list);
-        intent.putExtra(ROLE_COUNT, count);
-        intent.putExtra(IS_NEED_SIGN_LOVER, isNeedSignLover);
+        intent.putParcelableArrayListExtra(ROLE_LIST, (ArrayList<? extends Parcelable>) GameInfo.getInstance().getRoleList());
+        intent.putExtra(ROLE_COUNT, GameInfo.getInstance().getPlayerCount());
+        intent.putExtra(IS_NEED_SIGN_LOVER, GameInfo.getInstance().isNeedLover());
         context.startActivity(intent);
     }
 
