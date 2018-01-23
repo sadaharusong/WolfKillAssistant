@@ -14,6 +14,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.ListView;
@@ -94,6 +95,10 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_role);
         ButterKnife.bind(this);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //透明导航栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 
         mRoleList = getIntent().getParcelableArrayListExtra(ROLE_LIST);
         mPlayerCount = getIntent().getIntExtra(ROLE_COUNT, -1);

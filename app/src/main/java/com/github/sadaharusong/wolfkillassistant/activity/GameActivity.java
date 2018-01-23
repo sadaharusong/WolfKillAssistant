@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
 import com.github.sadaharusong.wolfkillassistant.R;
 import com.github.sadaharusong.wolfkillassistant.fragment.FragmentJumpManager;
@@ -28,6 +29,10 @@ public class GameActivity extends AppCompatActivity {
         WolfFragment fragment = new WolfFragment();
         fragmentTransaction.add(R.id.game_activity, fragment);
         fragmentTransaction.commit();
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //透明导航栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 
         FragmentJumpManager.getInstance().init(fragmentManager);
     }

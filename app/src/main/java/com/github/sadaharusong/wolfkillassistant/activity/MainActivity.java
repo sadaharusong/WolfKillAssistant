@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -61,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         MediaPlayUtils.getInstance().init(getApplicationContext());
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //透明导航栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         initData();
     }
 
