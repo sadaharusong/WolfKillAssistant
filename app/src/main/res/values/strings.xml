@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name">狼人杀上帝工具</string>
-    <string name="select_player_num">选择总人数：</string>
+    <string name="select_player_num">游 戏 人 数</string>
     <string name="reduce">减少</string>
     <string name="add">增加</string>
     <string name="_10">10</string>
-    <string name="select_role">选择角色：</string>
-    <string name="close_your_eyes">天黑请闭眼</string>
+    <string name="select_role">选 择 角 色</string>
+    <string name="close_your_eyes">确 认 角 色</string>
     <string name="villager">村民</string>
-    <!--狼人角色-->
     <string name="werewolf">狼人</string>
     <string name="devil">恶魔</string>
     <string name="white_wolf">白狼王</string>
@@ -15,7 +14,7 @@
     <string name="cupid">丘比特</string>
     <string name="sing_player_status">请标记%d号玩家状态</string>
     <string name="is_alive">是否存活</string>
-    <string name="select_identity">选择身份</string>
+    <string name="select_identity">选 择 身 份</string>
     <string name="start">月黑风高杀人夜</string>
     <string name="sign_lover">标记为恋人</string>
     <string name="die_for_love">恋人殉情</string>
@@ -30,6 +29,9 @@
     <string name="wolf_detail">请选择你要杀的人</string>
     <string name="yes">是的</string>
     <string name="no">不不不</string>
+
+    <string name="set_role_title">身 份 设 置</string>
+    <string name="player_set_role">%d 号玩家</string>
 
     <!--狼人页面-->
     <string name="wolf_title">狼人请睁眼</string>
@@ -54,7 +56,7 @@
 
     <!--最终页面-->
     <string name="final_tile">天亮啦！！~！！</string>
-    <string name="final_result_title">昨天晚上的结果：</string>
+    <string name="final_result_title">昨天晚上的结果</string>
     <string name="final_result_safe">平安夜</string>
     <string name="final_result_dead">%s 号玩家死亡</string>
     <string name="final_result_button">点击查看昨晚结果</string>

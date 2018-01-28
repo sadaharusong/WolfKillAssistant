@@ -69,10 +69,10 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
     @BindView(R.id.tv_confirm_end)
     TextView mTvConfirmEnd;
 
-    @BindView(R.id.tv_sign_status_start)
+    @BindView(R.id.tv_select_id_start)
     TextView mtvSignStatusStart;
 
-    @BindView(R.id.tv_sign_status_end)
+    @BindView(R.id.tv_select_id_end)
     TextView mtvSignStatusEnd;
 
     @BindView(R.id.start)
@@ -138,7 +138,7 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
                     if (mDl.isDrawerOpen(Gravity.RIGHT)) {
                         mDl.closeDrawer(Gravity.RIGHT);
                     } else {
-                        mtvSignStatusEnd.setText(String.format(getString(R.string.sing_player_status), (position + 1)));
+                        mtvSignStatusEnd.setText(String.format(getString(R.string.player_set_role), (position + 1)));
                         mRolAdapter.setRole(mGameRole);
                         mDl.openDrawer(Gravity.RIGHT);
                     }
@@ -146,7 +146,7 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
                     if (mDl.isDrawerOpen(Gravity.LEFT)) {
                         mDl.closeDrawer(Gravity.LEFT);
                     } else {
-                        mtvSignStatusStart.setText(String.format(getString(R.string.sing_player_status), (position + 1)));
+                        mtvSignStatusStart.setText(String.format(getString(R.string.player_set_role), (position + 1)));
                         mRolAdapter.setRole(mGameRole);
                         mDl.openDrawer(Gravity.LEFT);
                     }

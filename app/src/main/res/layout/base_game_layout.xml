@@ -4,38 +4,64 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/action_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="TextView"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="117dp"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:gravity="center_vertical"
+        android:background="@drawable/shape_header"
+        android:paddingBottom="10dp">
+
         <TextView
-            android:id="@+id/describe"
-            android:layout_weight="3"
+            android:id="@+id/action_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"/>
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/big_title"
+            android:textColor="@color/title"
+            android:text="@string/player_set_role"
+            android:layout_weight="1"
+            />
+
         <TextView
             android:id="@+id/time"
             android:layout_weight="1"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"/>
+            android:textSize="@dimen/time"
+            android:textColor="@color/buttonRed"
+            android:text="30"/>
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/action_number"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        ></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/shape_main"
+        android:layout_margin="5dp"
+        >
+        <TextView
+            android:id="@+id/describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/title"
+            android:text="TextView"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/action_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            ></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
 </LinearLayout>

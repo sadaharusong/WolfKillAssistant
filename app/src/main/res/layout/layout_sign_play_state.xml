@@ -5,30 +5,34 @@
     android:layout_height="match_parent"
     android:layout_gravity="start"
     android:background="@android:color/white"
-    android:padding="10dp">
+    >
 
-    <TextView
-        android:id="@+id/tv_sign_status_start"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sing_player_status"
-        android:textSize="18sp"
-        android:paddingBottom="5dp"/>
+        android:layout_height="117dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:background="@drawable/shape_header"
+        android:paddingBottom="10dp">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@android:color/darker_gray"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/big_title"
+            android:textColor="@color/title"
+            android:text="@string/player_set_role"
+            />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@android:color/darker_gray"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_select_id_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/subtitle"
+        android:textColor="@color/title"
         android:text="@string/select_identity"
         android:paddingTop="5dp"/>
 
@@ -40,13 +44,20 @@
         android:choiceMode="singleChoice"
         android:divider="@null"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"/>
+
     <TextView
         android:id="@+id/tv_confirm_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ensure"
-        android:gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/start"
         android:textColor="@android:color/white"
-        android:background="@drawable/blue_fill_corner"
-        android:padding="10dp"/>
+        android:background="@drawable/red_fill_corner"
+        android:layout_margin="9dp"
+        android:textSize="@dimen/subtitle"
+        android:gravity="center"/>
 </LinearLayout>

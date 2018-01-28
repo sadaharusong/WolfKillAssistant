@@ -3,5 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3F51B5</color>
-    <color name="setOk">#FF0000</color>
+    <color name="buttonRed">#FF0000</color>
+    <color name="title">#101010</color>
+    <color name="background">#60CCCCCC</color>
+    <color name="buttonGreen">#BAF272</color>
+    <color name="buttonBlue">#00F0FF</color>
 </resources>

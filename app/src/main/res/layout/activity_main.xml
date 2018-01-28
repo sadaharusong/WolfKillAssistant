@@ -10,79 +10,98 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="167dp"
+        android:orientation="vertical"
         android:gravity="center_vertical"
-        android:paddingTop="30dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:background="@drawable/shape_header"
+        android:paddingBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/select_player_num"/>
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/title_size"
+            android:textColor="@color/title"
+            android:text="@string/select_player_num"
+            android:paddingTop="27dp"
+            android:paddingBottom="30dp"
+            />
 
 
-        <ImageView
-            android:id="@+id/iv_reduce"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/shopping_reduce"
-            android:padding="10dp"
-            android:contentDescription="@string/reduce" />
-
-        <EditText
-            android:id="@+id/et_count"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/black_corner"
-            android:text="@string/_10"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:inputType="number"
-            android:maxLines="1"
-            android:maxLength="3"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:imeOptions="actionDone"/>
+            >
 
-        <ImageView
-            android:id="@+id/iv_add"
+            <ImageView
+                android:id="@+id/iv_reduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shopping_reduce"
+                android:paddingRight="15dp"
+                android:contentDescription="@string/reduce" />
+
+            <EditText
+                android:id="@+id/et_count"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/black_corner"
+                android:text="@string/_10"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:maxLength="3"
+                android:gravity="center"
+                android:imeOptions="actionDone"/>
+
+            <ImageView
+                android:id="@+id/iv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shopping_add"
+                android:paddingLeft="15dp"
+                android:contentDescription="@string/add"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_main"
+        android:layout_weight="1"
+        >
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/shopping_add"
-            android:padding="10dp"
-            android:contentDescription="@string/add"/>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/select_role"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/title"
+            android:padding="17dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@android:color/black"
-        android:layout_margin="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/select_role"
-        android:padding="10dp"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_role"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
     <TextView
         android:id="@+id/tv_close_eye"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
         android:text="@string/close_your_eyes"
         android:textColor="@android:color/white"
-        android:background="@drawable/blue_fill_corner"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:padding="5dp"
-        android:layout_margin="10dp"
+        android:background="@drawable/red_fill_corner"
+        android:layout_margin="9dp"
+        android:textSize="@dimen/subtitle"
         android:gravity="center"/>
 </LinearLayout>
