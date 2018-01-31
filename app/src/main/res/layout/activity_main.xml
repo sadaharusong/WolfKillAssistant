@@ -4,68 +4,83 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="167dp"
-        android:orientation="vertical"
-        android:gravity="center_vertical"
-        android:background="@drawable/shape_header"
-        android:paddingBottom="10dp">
+        android:layout_height="167dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textSize="@dimen/title_size"
-            android:textColor="@color/title"
-            android:text="@string/select_player_num"
-            android:paddingTop="27dp"
-            android:paddingBottom="30dp"
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:background="@drawable/number"
             />
-
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
+            android:layout_height="167dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:background="@drawable/shape_header"
+            android:paddingBottom="10dp">
 
-            <ImageView
-                android:id="@+id/iv_reduce"
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/shopping_reduce"
-                android:paddingRight="15dp"
-                android:contentDescription="@string/reduce" />
-
-            <EditText
-                android:id="@+id/et_count"
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:background="@drawable/black_corner"
-                android:text="@string/_10"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:inputType="number"
-                android:maxLines="1"
-                android:maxLength="3"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/title_size"
+                android:textColor="@color/title"
+                android:text="@string/select_player_num"
+                android:paddingTop="27dp"
+                android:paddingBottom="30dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:gravity="center"
-                android:imeOptions="actionDone"/>
+                >
 
-            <ImageView
-                android:id="@+id/iv_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/shopping_add"
-                android:paddingLeft="15dp"
-                android:contentDescription="@string/add"/>
+                <ImageView
+                    android:id="@+id/iv_reduce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_reduce"
+                    android:paddingRight="15dp"
+                    android:contentDescription="@string/reduce" />
+
+                <EditText
+                    android:id="@+id/et_count"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/black_corner"
+                    android:text="@string/_10"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:maxLength="3"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"/>
+
+                <ImageView
+                    android:id="@+id/iv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_add"
+                    android:paddingLeft="15dp"
+                    android:contentDescription="@string/add"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+
+
+
+    </FrameLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"

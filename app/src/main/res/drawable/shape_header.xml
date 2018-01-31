@@ -43,7 +43,7 @@
     <!-- Background -->
     <item>
         <shape>
-            <solid android:color="#FFFFFF" />
+            <solid android:color="#00FFFFFF" />
         </shape>
     </item>
 </layer-list>

@@ -4,38 +4,50 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="117dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="@drawable/shape_header"
-        android:paddingBottom="10dp">
+        android:layout_height="167dp">
 
-        <TextView
-            android:id="@+id/action_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="@dimen/big_title"
-            android:textColor="@color/title"
-            android:text="@string/player_set_role"
-            android:layout_weight="1"
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:background="@drawable/night"
             />
 
-        <TextView
-            android:id="@+id/time"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/time"
-            android:textColor="@color/buttonRed"
-            android:text="30"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="167dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/shape_header"
+            android:paddingBottom="10dp">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/action_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/big_title"
+                android:textColor="@color/title"
+                android:text="@string/player_set_role"
+                android:layout_weight="1"
+                />
 
+            <TextView
+                android:id="@+id/time"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/time"
+                android:textColor="@color/buttonRed"
+                android:text="30"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
