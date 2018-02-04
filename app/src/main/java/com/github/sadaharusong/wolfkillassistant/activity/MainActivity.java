@@ -2,7 +2,7 @@ package com.github.sadaharusong.wolfkillassistant.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         }
         mAdapter = new RoleAdapter(this);
         mAdapter.setOnItemClickListener(this);
-        mRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mRv.setLayoutManager(new GridLayoutManager(this, 2));
         mRv.setAdapter(mAdapter);
         mAdapter.setData(mList);
 

@@ -6,12 +6,21 @@
     <string name="_10">10</string>
     <string name="select_role">选 择 角 色</string>
     <string name="close_your_eyes">确 认 角 色</string>
+    <!--角色-->
     <string name="villager">村民</string>
     <string name="werewolf">狼人</string>
     <string name="devil">恶魔</string>
     <string name="white_wolf">白狼王</string>
     <string name="beautiful_wolf">狼美人</string>
     <string name="cupid">丘比特</string>
+    <string name="seer">预言家</string>
+    <string name="witch">女巫</string>
+    <string name="hunter">猎人</string>
+    <string name="protect">守卫</string>
+    <string name="thief">盗贼</string>
+    <string name="idiot">白痴</string>
+    <string name="succubus">魅魔</string>
+
     <string name="sing_player_status">请标记%d号玩家状态</string>
     <string name="is_alive">是否存活</string>
     <string name="select_identity">选 择 身 份</string>

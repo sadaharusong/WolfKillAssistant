@@ -23,4 +23,14 @@ public class TextUtils {
         }
         return false;
     }
+
+    public static boolean IsEquals(String str1 , String str2){
+        if (str1 == null || str2 == null){
+            return false;
+        }
+        if (str1 == "" || str2 == ""){
+            return false;
+        }
+        return str1.equals(str2);
+    }
 }

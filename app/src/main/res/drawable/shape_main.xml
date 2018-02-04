@@ -13,12 +13,6 @@
     <!-- Background -->
     <item>
         <shape>
-            <!--设置边距-->
-            <padding
-                android:bottom="10dp"
-                android:left="10dp"
-                android:right="10dp"
-                android:top="10dp" />
 
             <!--控制边界线颜色和大小-->
             <stroke

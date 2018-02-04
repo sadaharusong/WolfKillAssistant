@@ -26,6 +26,7 @@
         android:paddingBottom="10dp">
 
         <TextView
+            android:id="@+id/tv_select_id_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -39,7 +40,6 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/tv_select_id_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -66,7 +66,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/start"
+        android:text="@string/ensure"
         android:textColor="@android:color/white"
         android:background="@drawable/red_fill_corner"
         android:layout_margin="9dp"

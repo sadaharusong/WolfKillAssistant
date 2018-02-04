@@ -6,12 +6,12 @@
         <item>女巫</item>
         <item>猎人</item>
         <item>守卫</item>
-        <!--<item>盗贼</item>-->
-        <!--<item>丘比特</item>-->
+        <item>盗贼</item>
+        <item>丘比特</item>
         <item>白痴</item>
         <item>恶魔</item>
         <item>白狼王</item>
-        <!--<item>魅魔</item>-->
+        <item>魅魔</item>
         <item>狼美人</item>
 
     </string-array>
