@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">狼人杀上帝工具</string>
+    <string name="app_name">语音狼上帝</string>
     <string name="select_player_num">游 戏 人 数</string>
     <string name="reduce">减少</string>
     <string name="add">增加</string>
