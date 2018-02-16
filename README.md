@@ -8,7 +8,9 @@
 
 ## 版本
 - V 1.0.0 版本
+
 1.0.0版本暂时只提供第一页的记录功能，过了第一个晚上怎么记录呢？过了第一个晚上，会有一个玩家死亡，死亡的玩家继续可以当法官。若是平安夜呢？平安夜的话，第一个白天是会推一名玩家的，白天投票出去的那名玩家继续当法官即可。
+
 1.0.0版本暂时只支持：平民，狼人，猎人，预言家，女巫。这几个角色的功能，其他的待更新。。。。。。
 
 
@@ -37,8 +39,10 @@
 
 ## 下载地址
 欢迎下载使用，提建议~
+
 地址：
 https://github.com/sadaharusong/WolfKillAssistant/raw/master/WolfKillAssistant.apk
+
 二维码：
 
 ![img](https://github.com/sadaharusong/WolfKillAssistant/blob/master/image_folder/mark.png)
