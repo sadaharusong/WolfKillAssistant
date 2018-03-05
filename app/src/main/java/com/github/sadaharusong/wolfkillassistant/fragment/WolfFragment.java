@@ -46,7 +46,7 @@ public class WolfFragment extends BaseFragment {
 
     @Override
     public int setTime() {
-        return 30;
+        return 65;
     }
 
     @Override

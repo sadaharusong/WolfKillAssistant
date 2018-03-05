@@ -70,7 +70,7 @@ public class WitchFragment extends BaseFragment {
 
     @Override
     public int setTime() {
-        return 45;
+        return 80;
     }
 
     @Override

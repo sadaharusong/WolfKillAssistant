@@ -17,6 +17,7 @@ import com.github.sadaharusong.wolfkillassistant.adapter.GameAdapter;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
 import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
+import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
 
 import java.util.Map;
 
@@ -118,6 +119,7 @@ public abstract class BaseFragment extends Fragment{
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        DialogUtils.dismissDialog();
         handler.removeCallbacksAndMessages(null);
     }
 }

@@ -40,7 +40,7 @@ public class SeerFragment extends BaseFragment {
 
     @Override
     public int setTime() {
-        return 30;
+        return 60;
     }
 
     @Override

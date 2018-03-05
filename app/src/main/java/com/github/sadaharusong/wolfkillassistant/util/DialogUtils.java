@@ -15,6 +15,9 @@ import com.github.sadaharusong.wolfkillassistant.R;
 
 public class DialogUtils {
 
+    private static AlertDialog mNormalDialog = null;
+    private static AlertDialog mSingleDialog = null;
+
     /** 两个按钮的普通Dialog
      * @param message  设置对话框消息提示
      * @param confirmClick 自定义确定按钮点击事件
@@ -23,19 +26,30 @@ public class DialogUtils {
     public static void showNormalDialog(Context context, String message ,
                                   DialogInterface.OnClickListener confirmClick, DialogInterface.OnClickListener cancelClick){
 
-        final AlertDialog.Builder normalDialog =
-                new AlertDialog.Builder(context);
-        normalDialog.setMessage(message);
-        normalDialog.setPositiveButton(R.string.yes, confirmClick);
-        normalDialog.setNegativeButton(R.string.no, cancelClick);
+        AlertDialog.Builder normalBuilder = new AlertDialog.Builder(context);
+        normalBuilder.setMessage(message);
+        normalBuilder.setPositiveButton(R.string.yes, confirmClick);
+        normalBuilder.setNegativeButton(R.string.no, cancelClick);
         // 显示
-        normalDialog.show();
+        mNormalDialog = normalBuilder.create();
+        mNormalDialog.show();
+    }
+
+    public static void dismissDialog() {
+        if (mNormalDialog != null) {
+            mNormalDialog.dismiss();
+        }
+
+        if (mSingleDialog != null) {
+            mSingleDialog.dismiss();
+        }
     }
 
     public static void showSingleDialog(Context context, String message, DialogInterface.OnClickListener onClickListener){
-        final AlertDialog.Builder singleDialog = new AlertDialog.Builder(context);
-        singleDialog.setMessage(message);
-        singleDialog.setPositiveButton(R.string.ensure, onClickListener);
-        singleDialog.show();
+        AlertDialog.Builder singleBuilder = new AlertDialog.Builder(context);
+        singleBuilder.setMessage(message);
+        singleBuilder.setPositiveButton(R.string.ensure, onClickListener);
+        mSingleDialog = singleBuilder.create();
+        mSingleDialog.show();
     }
 }
