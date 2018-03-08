@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.github.sadaharusong.wolfkillassistant.R;
@@ -31,8 +32,10 @@ public class GameActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        //透明导航栏
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        //游戏时，APP常亮不息屏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        hideNavigationBar();
 
         FragmentJumpManager.getInstance().init(fragmentManager);
     }
@@ -45,5 +48,15 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+    }
+
+    /**
+     * 隐藏导航栏
+     * */
+    private void hideNavigationBar() {
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
