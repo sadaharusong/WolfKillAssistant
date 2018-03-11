@@ -1,6 +1,7 @@
 package com.github.sadaharusong.wolfkillassistant.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.sadaharusong.wolfkillassistant.R;
+import com.github.sadaharusong.wolfkillassistant.activity.MainActivity;
 import com.github.sadaharusong.wolfkillassistant.activity.SetRoleActivity;
 
 import butterknife.BindView;
@@ -30,6 +32,9 @@ public class FinalResultFragment extends Fragment implements View.OnClickListene
     @BindView(R.id.replay_button)
     Button mReplayButton;
 
+    @BindView(R.id.reset_button)
+    TextView mResetButton;
+
     @BindView(R.id.result_text)
     TextView mResultTextView;
 
@@ -44,6 +49,7 @@ public class FinalResultFragment extends Fragment implements View.OnClickListene
         ButterKnife.bind(this,view);
         mResultButton.setOnClickListener(this);
         mReplayButton.setOnClickListener(this);
+        mResetButton.setOnClickListener(this);
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -55,6 +61,10 @@ public class FinalResultFragment extends Fragment implements View.OnClickListene
                 break;
             case R.id.replay_button:
                 replayDo();
+                break;
+            case R.id.reset_button:
+                resetDo();
+                break;
             default:
         }
     }
@@ -76,5 +86,11 @@ public class FinalResultFragment extends Fragment implements View.OnClickListene
 
     private void replayDo(){
         SetRoleActivity.enter(getActivity());
+    }
+
+    private void resetDo() {
+        Intent intent = new Intent(getActivity() , MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

@@ -8,4 +8,5 @@
     <color name="background">#60CCCCCC</color>
     <color name="buttonGreen">#BAF272</color>
     <color name="buttonBlue">#00F0FF</color>
+    <color name="buttonYellow">#F4F760</color>
 </resources>

@@ -4,6 +4,17 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="167dp">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:background="@drawable/newday"
+            />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="167dp"
@@ -23,6 +34,7 @@
 
     </LinearLayout>
 
+    </FrameLayout>
 
     <TextView
         android:id="@+id/describe"
@@ -70,7 +82,16 @@
             android:layout_height="wrap_content"
             android:text="@string/final_replay_button"
             android:background="@drawable/green_fill_corner"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/final_reset_button"
+            android:background="@drawable/yellow_fill_corner"
+            android:layout_marginTop="30dp"
             />
 
     </LinearLayout>
