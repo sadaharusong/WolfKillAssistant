@@ -1,5 +1,6 @@
 package com.github.sadaharusong.wolfkillassistant.fragment;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,10 +14,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.sadaharusong.wolfkillassistant.R;
+import com.github.sadaharusong.wolfkillassistant.activity.GameActivity;
 import com.github.sadaharusong.wolfkillassistant.adapter.GameAdapter;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
+import com.github.sadaharusong.wolfkillassistant.model.GameInfo;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
-import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
 
 import java.util.Map;
@@ -42,7 +44,7 @@ public abstract class BaseFragment extends Fragment{
     RecyclerView mNumberView;
 
     int mTime = setTime();
-    Map<Integer,Role> mPlayMap = RoleMap.getInstance().getRoleMap();
+    Map<Integer,Role> mPlayMap = GameInfo.getInstance().getRoleMap();
 
     @Nullable
     @Override
@@ -106,7 +108,10 @@ public abstract class BaseFragment extends Fragment{
                         Message message = handler.obtainMessage(1);
                         handler.sendMessageDelayed(message, 1000);
                     }else{
-                        FragmentJumpManager.getInstance().jumpToNextFragment(setFragmentFlag());
+                        Activity activity = getActivity();
+                        if (activity instanceof GameActivity) {
+                            ((GameActivity) activity).getGameFragmentManager().jumpToNextFragment(setFragmentFlag());
+                        }
                     }
                     break;
                 default:

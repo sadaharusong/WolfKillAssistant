@@ -71,9 +71,9 @@ public class FinalResultFragment extends Fragment implements View.OnClickListene
 
     private void resultDo(){
         String result;
-        if (FragmentJumpManager.thisRoundPosition.size() > 0){
+        if (GameFragmentManager.thisRoundPosition.size() > 0){
             StringBuilder resultNum = new StringBuilder();
-            for (int a : FragmentJumpManager.thisRoundPosition){
+            for (int a : GameFragmentManager.thisRoundPosition){
                 resultNum = resultNum.append("[ " +(a + 1) + "] ");
             }
             result = getString(R.string.final_result_dead, resultNum);

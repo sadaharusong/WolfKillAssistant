@@ -27,7 +27,6 @@ import com.github.sadaharusong.wolfkillassistant.adapter.SetRoleAdapter;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
 import com.github.sadaharusong.wolfkillassistant.model.GameInfo;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
-import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -237,7 +236,7 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
                 }
                 break;
             case R.id.start:
-                if (RoleMap.getInstance().getRoleMap().size() == mPlayerCount){
+                if (GameInfo.getInstance().getRoleMap().size() == mPlayerCount){
                     Intent intent = new Intent(this, GameActivity.class);
                     this.startActivity(intent);
                 }else {
@@ -252,7 +251,7 @@ public class SetRoleActivity extends AppCompatActivity implements CompoundButton
         if (mGameRole.getName().equals(getString(R.string.default_role))){
             Toast.makeText(SetRoleActivity.this, getString(R.string.role_not , mCurrentPos + 1), Toast.LENGTH_SHORT).show();
         }else {
-            RoleMap.getInstance().addRole(mCurrentPos, mGameRole);
+            GameInfo.getInstance().addRole(mCurrentPos, mGameRole);
             mList.get(mCurrentPos).setName(getResources().getString(R.string.role_ok));
             mList.get(mCurrentPos).setSetted(true);
             mAdapter.notifyDataSetChanged();

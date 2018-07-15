@@ -1,5 +1,10 @@
 package com.github.sadaharusong.wolfkillassistant.model;
 
+import android.support.annotation.IntDef;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 /**
  * 角色页面adapter根据左右显示不同的item
  * @author sadaharusong
@@ -8,6 +13,22 @@ package com.github.sadaharusong.wolfkillassistant.model;
  * Email : jacksomangel@163.com
  */
 
-public enum ItemType {
-    LEFT, RIGHT
+public class ItemType {
+    public static final int LEFT = 0;
+    public static final int RIGHT = 1;
+    private int currentPosition;
+
+    @IntDef({LEFT, RIGHT})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface ItemPosition {}
+
+    public void setCurrentPositon(@ItemPosition int currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
+    @ItemPosition
+    public int getCurrentPosition() {
+        return currentPosition;
+    }
+
 }

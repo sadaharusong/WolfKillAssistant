@@ -1,15 +1,17 @@
 package com.github.sadaharusong.wolfkillassistant.fragment;
 
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.github.sadaharusong.wolfkillassistant.R;
+import com.github.sadaharusong.wolfkillassistant.activity.GameActivity;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
+import com.github.sadaharusong.wolfkillassistant.model.GameInfo;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
-import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
 import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
 import com.github.sadaharusong.wolfkillassistant.util.SoundConstant;
@@ -25,7 +27,7 @@ public class WolfFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        FragmentJumpManager.thisRoundPosition.clear();
+        GameFragmentManager.thisRoundPosition.clear();
         MediaPlayUtils.getInstance().play(SoundConstant.WOLF_OPEN);
     }
 
@@ -36,7 +38,7 @@ public class WolfFragment extends BaseFragment {
 
     @Override
     public int setFragmentFlag() {
-        return FragmentJumpManager.WOLF_FRAGMENT;
+        return GameFragmentManager.WOLF_FRAGMENT;
     }
 
     @Override
@@ -58,11 +60,14 @@ public class WolfFragment extends BaseFragment {
                 DialogUtils.showNormalDialog(getActivity(), kill, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FragmentJumpManager.thisRoundPosition.add(position);
+                        GameFragmentManager.thisRoundPosition.add(position);
                         Role role = mPlayMap.get(position);
                         role.setisDead(true);
-                        RoleMap.getInstance().addRole(position,role);
-                        FragmentJumpManager.getInstance().jumpToNextFragment(FragmentJumpManager.WOLF_FRAGMENT);
+                        GameInfo.getInstance().addRole(position,role);
+                        Activity activity = getActivity();
+                        if (activity instanceof GameActivity) {
+                            ((GameActivity) activity).getGameFragmentManager().jumpToNextFragment(GameFragmentManager.WOLF_FRAGMENT);
+                        }
                     }
                 }, new DialogInterface.OnClickListener() {
                     @Override

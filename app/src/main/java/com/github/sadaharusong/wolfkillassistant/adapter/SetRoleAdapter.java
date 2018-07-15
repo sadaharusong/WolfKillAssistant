@@ -39,8 +39,8 @@ public class SetRoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == ItemType.LEFT.ordinal()) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,@ItemType.ItemPosition int viewType) {
+        if (viewType == ItemType.LEFT) {
             return new ItemLeftViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_rv_role_1, parent, false));
         }else {
             return new ItemRightViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_rv_role_2, parent, false));
@@ -88,7 +88,7 @@ public class SetRoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemViewType(int position) {
-        return position % 2 == 0 ? ItemType.LEFT.ordinal() : ItemType.RIGHT.ordinal();
+        return position % 2 == 0 ? ItemType.LEFT : ItemType.RIGHT;
     }
 
     public void setData(List<Role> list) {

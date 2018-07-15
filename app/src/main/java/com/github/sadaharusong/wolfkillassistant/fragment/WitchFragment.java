@@ -1,14 +1,16 @@
 package com.github.sadaharusong.wolfkillassistant.fragment;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.github.sadaharusong.wolfkillassistant.R;
+import com.github.sadaharusong.wolfkillassistant.activity.GameActivity;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
+import com.github.sadaharusong.wolfkillassistant.model.GameInfo;
 import com.github.sadaharusong.wolfkillassistant.model.Role;
-import com.github.sadaharusong.wolfkillassistant.model.RoleMap;
 import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
 import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
 import com.github.sadaharusong.wolfkillassistant.util.SoundConstant;
@@ -24,7 +26,7 @@ public class WitchFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (FragmentJumpManager.thisRoundPosition == null || FragmentJumpManager.thisRoundPosition.size() <= 0) {
+        if (GameFragmentManager.thisRoundPosition == null || GameFragmentManager.thisRoundPosition.size() <= 0) {
             DialogUtils.showSingleDialog(getActivity(), getString(R.string.witch_save_nobody_title), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -32,14 +34,14 @@ public class WitchFragment extends BaseFragment {
                 }
             });
         } else {
-            final int deadPosition = FragmentJumpManager.thisRoundPosition.get(0);
+            final int deadPosition = GameFragmentManager.thisRoundPosition.get(0);
             DialogUtils.showNormalDialog(getActivity(), getString(R.string.witch_save_title, deadPosition + 1), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    FragmentJumpManager.thisRoundPosition.clear();
+                    GameFragmentManager.thisRoundPosition.clear();
                     Role role = mPlayMap.get(deadPosition);
                     role.setisDead(false);
-                    RoleMap.getInstance().addRole(deadPosition,role);
+                    GameInfo.getInstance().addRole(deadPosition,role);
                     dialogInterface.dismiss();
                     showNotKill();
                 }
@@ -60,7 +62,7 @@ public class WitchFragment extends BaseFragment {
 
     @Override
     public int setFragmentFlag() {
-        return FragmentJumpManager.WITCH_FRAGMENT;
+        return GameFragmentManager.WITCH_FRAGMENT;
     }
 
     @Override
@@ -81,11 +83,14 @@ public class WitchFragment extends BaseFragment {
                 DialogUtils.showNormalDialog(getActivity(), getString(R.string.witch_kill_person, position + 1), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FragmentJumpManager.thisRoundPosition.add(position);
+                        GameFragmentManager.thisRoundPosition.add(position);
                         Role role = mPlayMap.get(position);
                         role.setisDead(true);
-                        RoleMap.getInstance().addRole(position,role);
-                        FragmentJumpManager.getInstance().jumpToNextFragment(FragmentJumpManager.WITCH_FRAGMENT);
+                        GameInfo.getInstance().addRole(position,role);
+                        Activity activity = getActivity();
+                        if (activity instanceof GameActivity) {
+                            ((GameActivity) activity).getGameFragmentManager().jumpToNextFragment(GameFragmentManager.WITCH_FRAGMENT);
+                        }
                     }
                 }, new DialogInterface.OnClickListener() {
                     @Override
@@ -102,7 +107,10 @@ public class WitchFragment extends BaseFragment {
         DialogUtils.showSingleDialog(getActivity(), getString(R.string.witch_not_kill_title), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                FragmentJumpManager.getInstance().jumpToNextFragment(FragmentJumpManager.WITCH_FRAGMENT);
+                Activity activity = getActivity();
+                if (activity instanceof GameActivity) {
+                    ((GameActivity) activity).getGameFragmentManager().jumpToNextFragment(GameFragmentManager.WITCH_FRAGMENT);
+                }
             }
         });
     }
@@ -116,7 +124,10 @@ public class WitchFragment extends BaseFragment {
         }, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                FragmentJumpManager.getInstance().jumpToNextFragment(FragmentJumpManager.WITCH_FRAGMENT);
+                Activity activity = getActivity();
+                if (activity instanceof GameActivity) {
+                    ((GameActivity) activity).getGameFragmentManager().jumpToNextFragment(GameFragmentManager.WITCH_FRAGMENT);
+                }
             }
         });
     }

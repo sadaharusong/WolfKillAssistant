@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.github.sadaharusong.wolfkillassistant.R;
-import com.github.sadaharusong.wolfkillassistant.fragment.FragmentJumpManager;
+import com.github.sadaharusong.wolfkillassistant.fragment.GameFragmentManager;
 import com.github.sadaharusong.wolfkillassistant.fragment.WolfFragment;
 import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
 
@@ -21,6 +21,8 @@ import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
  */
 
 public class GameActivity extends AppCompatActivity {
+    GameFragmentManager mGameFragmentManager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +33,13 @@ public class GameActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.game_activity, fragment);
         fragmentTransaction.commit();
 
+        mGameFragmentManager = new GameFragmentManager(fragmentManager);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         //游戏时，APP常亮不息屏
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         hideNavigationBar();
-
-        FragmentJumpManager.getInstance().init(fragmentManager);
     }
 
     @Override
@@ -58,5 +60,9 @@ public class GameActivity extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    public GameFragmentManager getGameFragmentManager () {
+        return mGameFragmentManager;
     }
 }

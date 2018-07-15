@@ -14,17 +14,17 @@ import java.io.IOException;
  * Email : jacksomangel@163.com
  */
 public class MediaPlayUtils {
-    private static MediaPlayUtils mInstance;
     private MediaPlayer mMediaPlayer;
     private Context mContext;
 
-    MediaPlayUtils(){}
+    private MediaPlayUtils(){}
+
+    private static class LazyHolder {
+        private static final MediaPlayUtils INSTANCE = new MediaPlayUtils();
+    }
 
     public static MediaPlayUtils getInstance(){
-        if (mInstance == null){
-            mInstance = new MediaPlayUtils();
-        }
-        return mInstance;
+        return LazyHolder.INSTANCE;
     }
 
     public void init(Context context){

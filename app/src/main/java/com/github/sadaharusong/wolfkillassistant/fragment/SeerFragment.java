@@ -1,11 +1,13 @@
 package com.github.sadaharusong.wolfkillassistant.fragment;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.github.sadaharusong.wolfkillassistant.R;
+import com.github.sadaharusong.wolfkillassistant.activity.GameActivity;
 import com.github.sadaharusong.wolfkillassistant.listener.OnItemClickListener;
 import com.github.sadaharusong.wolfkillassistant.util.DialogUtils;
 import com.github.sadaharusong.wolfkillassistant.util.MediaPlayUtils;
@@ -30,7 +32,7 @@ public class SeerFragment extends BaseFragment {
 
     @Override
     public int setFragmentFlag() {
-        return FragmentJumpManager.SEER_FRAGMENT;
+        return GameFragmentManager.SEER_FRAGMENT;
     }
 
     @Override
@@ -75,7 +77,10 @@ public class SeerFragment extends BaseFragment {
         DialogUtils.showSingleDialog(getActivity(), result, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                FragmentJumpManager.getInstance().jumpToNextFragment(FragmentJumpManager.SEER_FRAGMENT);
+                Activity activity = getActivity();
+                if (activity instanceof GameActivity) {
+                    ((GameActivity) activity).getGameFragmentManager().jumpToNextFragment(GameFragmentManager.SEER_FRAGMENT);
+                }
             }
         });
     }
